@@ -1,0 +1,10 @@
+.my_author_field {
+    color: #007bff; /* Màu xanh dương */
+    font-style: italic;
+    font-weight: bold;
+}
+
+.o_form_view .o_field_widget[name="author"] {
+    /* CSS này sẽ áp dụng cho tất cả các trường tên 'author' trong form view */
+    background-color: #f0f0f0;
+}

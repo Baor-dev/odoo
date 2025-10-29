@@ -1,0 +1,79 @@
+/* * Tệp SCSS ghi đè theme cho my_bookstore
+ * Lưu ý: Bạn chỉ cần định nghĩa lại biến.
+ * Bạn KHÔNG cần dùng !default (Odoo dùng !default để cho phép chúng ta ghi đè).
+ */
+
+// 1. Màu thương hiệu chính (ảnh hưởng đến nút bấm, link, menu đang chọn...)
+$o-primary-color: #B53471; // Đổi từ màu tím/xanh dương sang màu hồng đậm
+
+// 2. Màu nền của thanh menu bên trái (sidebar)
+$o-navbar-light-bg: #2C3A47; // Đổi từ xám sáng sang màu đen xám
+
+// 3. Màu chữ/icon trên thanh menu bên trái
+$o-navbar-light-color: #F5F6FA; // Đổi sang màu trắng xám
+
+// 4. Màu nền của Control Panel (nơi có nút Create, Import...)
+$o-control-panel-background-color: #f7f7f7; // Làm cho nó xám hơn một chút
+
+// 5. Đổi font chữ toàn hệ thống
+$font-family-sans-serif: "Lato", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+/* * Bạn vẫn có thể thêm CSS tùy chỉnh như bình thường
+ * và thậm chí dùng lại các biến bạn vừa định nghĩa!
+ */
+.my_author_field {
+    color: $o-primary-color; // Dùng lại biến màu hồng ở trên
+    font-style: italic;
+    border-bottom: 1px dashed $o-primary-color;
+}
+
+/* ======================================== */
+/* == TÙY CHỈNH CÁC NÚT CRUD            == */
+/* ======================================== */
+/* * Chúng ta sẽ dùng pseudo-element ::before
+ * để chèn icon từ thư viện FontAwesome (có sẵn trong Odoo)
+ */
+
+/* --- Nút "Tạo mới" (Create) ở List/Kanban View --- */
+/* Chúng ta dùng [data-hotkey="c"] để chắc chắn đó là nút Create */
+.o_control_panel .o_cp_button .btn-primary[data-hotkey="c"] {
+
+    &::before {
+        font-family: "FontAwesome";
+        content: "\\f067"; /* Icon fa-plus (dấu cộng) */
+        margin-right: 5px;
+        font-weight: 600; /* Cho icon đậm hơn một chút */
+    }
+}
+
+/* --- Nút "Sửa" (Edit) ở Form View --- */
+.o_form_statusbar .o_form_button_edit {
+
+    &::before {
+        font-family: "FontAwesome";
+        content: "\\f040"; /* Icon fa-pencil (cái bút) */
+        margin-right: 5px;
+    }
+}
+
+/* --- Nút "Lưu" (Save) ở Form View --- */
+.o_form_statusbar .o_form_button_save {
+    /* Nút này đã có màu hồng ($o-primary-color) từ theme */
+    /* Chúng ta chỉ cần thêm icon "Save" */
+
+    &::before {
+        font-family: "FontAwesome";
+        content: "\\f0c7"; /* Icon fa-save (cái đĩa mềm) */
+        margin-right: 5px;
+    }
+}
+
+/* --- Nút "Hủy bỏ" (Discard) ở Form View --- */
+.o_form_statusbar .o_form_button_cancel {
+
+    &::before {
+        font-family: "FontAwesome";
+        content: "\\f00d"; /* Icon fa-times (dấu X) */
+        margin-right: 5px;
+    }
+}
