@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree View cho Superhuman -->
+    <record id="view_demo_superhuman_tree" model="ir.ui.view">
+        <field name="name">demo.superhuman.tree</field>
+        <field name="model">demo.superhuman</field>
+        <field name="arch" type="xml">
+            <tree string="Superhumans ">
+                <field name="name"/>
+                <field name="hero_name"/>
+                <field name="superpower"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View cho Superhuman -->
+    <record id="view_demo_superhuman_form" model="ir.ui.view">
+        <field name="name">demo.superhuman.form</field>
+        <field name="model">demo.superhuman</field>
+        <field name="arch" type="xml">
+            <form string="Superhuman ">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="hero_name" placeholder="Hero Alias" required="1"/>
+                        </h1>
+                        <h2>
+                            <field name="name" placeholder="Real Name (from Human)"/>
+                        </h2>
+                    </div>
+
+                    <group>
+                        <group string="Basic Info (from Human)">
+                            <field name="name"/>
+                        </group>
+                        <group string="Superhuman Details">
+                            <field name="hero_name"/>
+                            <field name="superpower"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action cho Superhuman -->
+    <record id="action_demo_superhuman" model="ir.actions.act_window">
+        <field name="name">Superhumans (_inherit)</field>
+        <field name="res_model">demo.superhuman</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

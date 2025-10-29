@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Menu Gốc -->
+    <menuitem id="menu_inheritance_demo_root"
+              name="Inheritance Demo"
+              sequence="90"/>
+
+    <!-- Menu con cho Human -->
+    <menuitem id="menu_demo_human"
+              name="Humans"
+              parent="menu_inheritance_demo_root"
+              action="action_demo_human"
+              sequence="20"/>
+
+    <!-- Menu con cho Superhuman -->
+    <menuitem id="menu_demo_superhuman"
+              name="Superhuman"
+              parent="menu_inheritance_demo_root"
+              action="action_demo_superhuman"
+              sequence="10"/>
+
+    <!-- Menu con cho Customer (_inherits) -->
+    <menuitem id="menu_demo_customer"
+              name="Customers"
+              parent="menu_inheritance_demo_root"
+              action="action_demo_customer"
+              sequence="10"/>
+
+</odoo>
