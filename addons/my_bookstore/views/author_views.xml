@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="bookstore_author_view_form" model="ir.ui.view">
+        <field name="name">bookstore.author.form</field>
+        <field name="model">bookstore.author</field>
+        <field name="arch" type="xml">
+            <form string="Tác giả">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="bio"/>
+                    </group>
+                    <notebook>
+                        <page string="Sách đã viết">
+                            <field name="book_ids" readonly="1">
+                                <tree>
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="bookstore_author_view_tree" model="ir.ui.view">
+        <field name="name">bookstore.author.tree</field>
+        <field name="model">bookstore.author</field>
+        <field name="arch" type="xml">
+            <list string="Tác giả">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="bookstore_author_action" model="ir.actions.act_window">
+        <field name="name">Tác giả</field>
+        <field name="res_model">bookstore.author</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="bookstore_author_menu"
+        name="Tác giả"
+        parent="bookstore_menu_root"
+        action="bookstore_author_action"
+        sequence="20"/>
+</odoo>

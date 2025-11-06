@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_bookstore" model="ir.module.category">
+        <field name="name">Bookstore</field>
+        <field name="description">Quyền truy cập cho Bookstore</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="group_bookstore_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_bookstore"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_bookstore_admin" model="res.groups">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="module_category_bookstore"/>
+        <field name="implied_ids" eval="[(4, ref('group_bookstore_user'))]"/>
+    </record>
+
+    <record id="group_bookstore_author" model="res.groups">
+        <field name="name">Author</field>
+        <field name="category_id" ref="module_category_bookstore"/>
+        <field name="implied_ids" eval="[(4, ref('group_bookstore_user'))]"/>
+    </record>
+
+    <record id="base.group_system" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('my_bookstore.group_bookstore_admin'))]"/>
+    </record>
+
+</odoo>

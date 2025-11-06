@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+"access_bookstore_book_user","Bookstore Book User","model_bookstore_book","my_bookstore.group_bookstore_user",1,0,0,0
+"access_bookstore_book_admin","Bookstore Book Admin","model_bookstore_book","my_bookstore.group_bookstore_admin",1,1,1,1
+"access_bookstore_author_user","Bookstore Author User","model_bookstore_author","my_bookstore.group_bookstore_user",1,0,0,0
+"access_bookstore_author_admin","Bookstore Author Admin","model_bookstore_author","my_bookstore.group_bookstore_admin",1,1,1,1
+"access_bookstore_publisher_user","Bookst. Publisher User","model_bookstore_publisher","my_bookstore.group_bookstore_user",1,0,0,0
+"access_bookstore_publisher_admin","Bookst. Publisher Admin","model_bookstore_publisher","my_bookstore.group_bookstore_admin",1,1,1,1
+"access_bookstore_book_author","Bookstore Book Author","model_bookstore_book","my_bookstore.group_bookstore_author",1,1,1,1
