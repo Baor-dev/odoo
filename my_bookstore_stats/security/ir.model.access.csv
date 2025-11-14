@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+"access_bookstore_stats_wizard_accountant","Stats Wizard Accountant","model_bookstore_stats_wizard","group_bookstore_accountant",1,1,1,1
+"access_bookstore_stats_wizard_admin","Stats Wizard Admin","model_bookstore_stats_wizard","my_bookstore.group_bookstore_admin",1,1,1,1

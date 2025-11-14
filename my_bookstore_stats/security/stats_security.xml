@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_bookstore_accountant" model="res.groups">
+        <field name="name">Accountant</field>
+        <field name="category_id" ref="my_bookstore.module_category_bookstore"/>
+    </record>
+
+</odoo>

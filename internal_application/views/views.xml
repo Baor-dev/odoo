@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+    <record id="view_employee_form_inherit_private_info" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.private.info</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form[@js_class='hr_employee_form']//page[@name='personal_information']//field[@name='country_of_birth']" position="after">
+                <field name="x_hometown"/>
+                <field name="x_ethnicity"/>
+                <field name="x_religion"/>
+            </xpath>
+
+        </field>
+    </record>
+  </data>
+</odoo>
+
+

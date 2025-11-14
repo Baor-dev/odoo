@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee_internal_app,access.hr.employee.internal.app,hr.model_hr_employee,group_internal_application_user,1,0,0,0
+access_hr_department_internal_app,access.hr.department.internal.app,hr.model_hr_department,group_internal_application_user,1,0,0,0
+access_hr_contract_internal_app,access.hr.contract.internal.app,hr_contract.model_hr_contract,group_internal_application_user,1,0,0,0
+access_hr_leave_internal_app,access.hr.leave.internal.app,hr_holidays.model_hr_leave,group_internal_application_user,1,0,0,0
+access_hr_leave_allocation_internal_app,access.hr.leave.allocation.internal.app,hr_holidays.model_hr_leave_allocation,group_internal_application_user,1,0,0,0

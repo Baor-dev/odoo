@@ -1,0 +1,84 @@
+<odoo>
+    <data>
+        <menuitem
+            id="internal_application_menu_root"
+            name="Internal Application"
+            web_icon="internal_application,static/description/icon.png"
+            sequence="10"
+            groups="internal_application.group_internal_application_user"
+        />
+
+    <!-- Menu nhân viên -->
+        <menuitem
+            id="internal_application_menu_employee_parent"
+            name="Nhân sự"
+            parent="internal_application_menu_root"
+            sequence="10"
+        />
+
+        <menuitem
+            id="internal_application_menu_employee"
+            name="Nhân viên"
+            parent="internal_application_menu_employee_parent"
+            action="hr.open_view_employee_list_my"
+            sequence="10"
+        />
+
+        <menuitem
+            id="internal_application_menu_contract"
+            name="Hợp đồng"
+            parent="internal_application_menu_employee_parent"
+            action="hr_contract.action_hr_contract"
+            sequence="20"
+        />
+
+        <menuitem
+            id="internal_application_menu_org_chart"
+            name="Phòng ban"
+            parent="internal_application_menu_employee_parent"
+            action="hr.hr_department_kanban_action"
+            sequence="30"
+        />
+
+    <!-- Menu Đơn từ  -->
+        <menuitem
+            id="internal_application_menu_holiday_parent"
+            name="Đơn từ"
+            parent="internal_application_menu_root"
+            sequence="15"
+        />
+
+        <menuitem
+            id="internal_application_menu_holidays"
+            name="Đơn từ"
+            parent="internal_application_menu_holiday_parent"
+            action="hr_holidays.action_hr_holidays_dashboard"
+            sequence="20"
+        />
+
+        <menuitem
+            id="internal_application_menu_my_holidays"
+            name="Đơn từ của tôi"
+            parent="internal_application_menu_holiday_parent"
+            action="hr_holidays.hr_leave_action_my"
+            sequence="30"
+        />
+
+    <!-- Chấm công -->
+        <menuitem
+            id="internal_application_menu_attendance_parent"
+            name="Chấm công"
+            parent="internal_application_menu_root"
+            sequence="16"
+        />
+
+        <menuitem
+            id="internal_application_menu_attendance_overview"
+            name="Tổng quan"
+            parent="internal_application_menu_attendance_parent"
+            action="hr_attendance.hr_attendance_overtime_action"
+            sequence="20"
+        />
+    </data>
+</odoo>
+
